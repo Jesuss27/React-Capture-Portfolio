@@ -1,7 +1,7 @@
 import React from "react" ;
 import wireframe from "../images/wireframe.jpg";
 //styled
-import styled from "styled-components" ;
+import {About, Description, Hide, Image} from "../styles"
 const AboutSection = () => {
     return(
             <About>
@@ -33,39 +33,6 @@ const AboutSection = () => {
     )
 }
 
-//styled components
-const About = styled.div`
-    min-height: 90vh;
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5rem 5rem;
-    color:white;
-    img{
-        margin: 0rem 5rem;
-        padding: 0rem
-    }
-` ; 
-
-const Description = styled.div`
-    flex: 1;
-    padding-right:5rem;
-    font-weight:lighter;
-
-`
-const Image = styled.div`
-    flex:1;
-    overflow:hidden;
-    img{
-        width:100%;
-        height:80vh;
-        object-fit: cover;
-    }
-
-`
-const Hide = styled.div`
-    overflow: hidden;
-`
 
 
 
