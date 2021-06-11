@@ -15,6 +15,7 @@ export const About = styled.div`
 
 export const Description = styled.div`
     flex: 1;
+    flex-basis:15rem;
     padding-right:5rem;
     font-weight:lighter;
 

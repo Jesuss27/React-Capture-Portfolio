@@ -10,14 +10,21 @@ const GlobalStyle = createGlobalStyle`
 
 body{
     background: #1b1b1b;
+    font-family: "Inter", sans-serif;
     
+}
+
+.design{
+    font-family: 'Lobster Two', sans-serif;
+    color: #6dffc9;
 }
 
 button{
     font-weight: bold;
+    font-family: "Inter", sans-serif;
     font-size: 1.1.em;
     cursor:pointer;
-    padding: 1em 1rem;
+    padding: 1em 2rem;
     border: 3px solid #23d997;
     background: transparent;
     color:white;
@@ -30,13 +37,9 @@ button{
 
 }
 
-img{
-    max-width: 40vw;
-}
-
 h2{
     font-weight: lighter;
-    font-size: 3em;
+    font-size: 4em;
 }
 
 h3{
@@ -44,12 +47,26 @@ h3{
 
 }
 
+h4{
+    font-weight: bold;
+    
+}
+
+span{
+    font-weight: bold;
+    color:#23d997
+}
+a{
+    font-size:1.1rem;
+}
+
 p{
-    padding:3em 0em;
+    padding:3rem 0rem;
     color:#ccc;
     font-size: 1.4em;
     line-height:150%;
 }
+
 
 `
 
