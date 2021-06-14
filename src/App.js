@@ -4,6 +4,7 @@ import Contact from "./pages/Contact" ;
 import GlobalStyle from "./components/GlobalStyle"
 import Nav from "./components/Nav";
 import {Switch,Route} from "react-router-dom";
+import ProductDetail from "./pages/ProductDetail"
 
 
 function App() {
@@ -17,7 +18,11 @@ function App() {
           <AboutUs/>
         </Route>
 
-        <Route path="/work">
+        <Route path="/work/:id" >
+          <ProductDetail />
+        </Route>
+
+        <Route path="/work" exact>
           <Work/>
         </Route>
 
