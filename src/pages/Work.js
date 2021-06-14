@@ -12,7 +12,7 @@ const Work = () => {
             <Example>
                 <h1>Goodfika</h1>
                 <div className="line"></div>
-                <Link>
+                <Link to="/work/goodfika">
                     <img src={product1} alt="" />
                 </Link>
             </Example>
@@ -20,7 +20,7 @@ const Work = () => {
             <Example>
                 <h1>Sad Times</h1>
                 <div className="line"></div>
-                <Link>
+                <Link to="/work/sad-times">
                     <img src={product2} alt="" />
                 </Link>
             </Example>
@@ -28,7 +28,7 @@ const Work = () => {
             <Example>
                 <h1>Metro</h1>
                 <div className="line"></div>
-                <Link>
+                <Link to="/work/hamlet">
                     <img src={product3} alt="" />
                 </Link>
             </Example>
