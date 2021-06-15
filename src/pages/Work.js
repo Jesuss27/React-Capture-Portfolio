@@ -4,11 +4,14 @@ import product1 from "../images/product1.webp"
 import product2 from "../images/product2.webp"
 import product3 from "../images/product3.webp"
 import {Link} from "react-router-dom";
+//Animations
+import {motion} from "framer-motion";
+import {pageAnimation} from "../pages/animation"
 
 
 const Work = () => {
     return(
-        <Works>
+        <Works variants={pageAnimation} initial="hidden" animate="show" exit="exit">
             <Example>
                 <h1>Goodfika</h1>
                 <div className="line"></div>
@@ -39,12 +42,13 @@ const Work = () => {
     )
 };
 
-const Works = styled.div`
+const Works = styled(motion.div)`
     min-height:100vh;
     overflow:hidden;
     padding:5rem 10rem;
-    h2{
+    h1{
         padding:1rem 0rem;
+        color:#23d997;
     }
 `
 
