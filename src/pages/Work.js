@@ -11,7 +11,7 @@ import {pageAnimation} from "../pages/animation"
 
 const Work = () => {
     return(
-        <Works variants={pageAnimation} initial="hidden" animate="show" exit="exit">
+        <Works variants={pageAnimation} initial="hidden" animate="show" exit="exit" style={{background:"#ffff"}}>
             <Example>
                 <h1>Goodfika</h1>
                 <div className="line"></div>
