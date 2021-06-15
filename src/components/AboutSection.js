@@ -5,6 +5,7 @@ import {About, Description, Hide, Image} from "../styles"
 
 import { motion } from "framer-motion";
 import {titleAnim, fade, photoAnim} from "../pages/animation"
+import Wave from "./Wave"
 
 const AboutSection = () => {
 
@@ -32,8 +33,9 @@ const AboutSection = () => {
                     <motion.button variants={fade}>CONTACT</motion.button>
                 </Description>
                 <Image>
-                    <motion.img variants={photoAnim} src={wireframe} alt="wireframe sketches" />
+                    <motion.img variants={photoAnim} initial="hidden" animate="show" src={wireframe} alt="wireframe sketches" />
                 </Image>
+                <Wave />
             </About>
     )
 }

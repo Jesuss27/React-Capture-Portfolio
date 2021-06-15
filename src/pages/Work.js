@@ -6,33 +6,48 @@ import product3 from "../images/product3.webp"
 import {Link} from "react-router-dom";
 //Animations
 import {motion} from "framer-motion";
-import {pageAnimation} from "../pages/animation"
+import { pageAnimation, fade, photoAnim, lineAnim, slider, sliderContainer } from "../pages/animation"
 
 
 const Work = () => {
     return(
         <Works variants={pageAnimation} initial="hidden" animate="show" exit="exit" style={{background:"#ffff"}}>
+
+            <motion.div variants={sliderContainer}>
+                <Frame1 variants={slider}></Frame1>
+                <Frame2 variants={slider}></Frame2>
+                <Frame3 variants={slider}></Frame3>
+                <Frame4 variants={slider}></Frame4>
+            </motion.div>
+
+
             <Example>
-                <h1>Goodfika</h1>
-                <div className="line"></div>
+                <motion.h1 variants={fade}>Goodfika</motion.h1>
+                <motion.div variants={lineAnim} className="line"></motion.div>
                 <Link to="/work/goodfika">
-                    <img src={product1} alt="" />
+                    <Hide>
+                    <motion.img variants={photoAnim} src={product1} alt="" />
+                    </Hide>
                 </Link>
             </Example>
 
             <Example>
-                <h1>Sad Times</h1>
-                <div className="line"></div>
+                <motion.h1 variants={fade}>Sad Times</motion.h1>
+                <motion.div variants={lineAnim}  className="line"></motion.div>
                 <Link to="/work/sad-times">
-                    <img src={product2} alt="" />
+                    <Hide>
+                    <motion.img variants={photoAnim} src={product2} alt="" />
+                    </Hide>
                 </Link>
             </Example>
 
             <Example>
-                <h1>Metro</h1>
-                <div className="line"></div>
+                <motion.h1 variants={fade}>Metro</motion.h1>
+                <motion.div variants={lineAnim}  className="line"></motion.div>
                 <Link to="/work/hamlet">
-                    <img src={product3} alt="" />
+                    <Hide>
+                    <motion.img variants={photoAnim} src={product3} alt="" />
+                    </Hide>
                 </Link>
             </Example>
 
@@ -48,7 +63,7 @@ const Works = styled(motion.div)`
     padding:5rem 10rem;
     h1{
         padding:1rem 0rem;
-        color:#23d997;
+        
     }
 `
 
@@ -56,8 +71,8 @@ const Example = styled.div`
     padding-bottom: 10rem;
     .line{
         height:0.5rem;
-        background:#cccccc;
-        margin-bottom:3rem
+        margin-bottom:3rem;
+        background-color:#23d997;
         
     }
     img{
@@ -66,6 +81,33 @@ const Example = styled.div`
         object-fit: cover;
     }
 `
+const Hide = styled.div`
+    overflow: hidden;
+`
+
+const Frame1 = styled(motion.div)`
+    position:fixed;
+    left:0;
+    top:10%;
+    width:100%;
+    height:100vh;
+    background:#fffebf;
+    z-index:2;
+`
+
+const Frame2= styled(Frame1)`
+    background: #ff8efb;
+
+`
+const Frame3= styled(Frame1)`
+    background: #8ed2ff;
+
+`
+const Frame4= styled(Frame1)`
+    background: #8effa0;
+
+`
+
 
 
 export default Work

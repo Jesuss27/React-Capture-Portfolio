@@ -18,9 +18,11 @@ export const Description = styled.div`
     flex-basis:15rem;
     padding-right:5rem;
     font-weight:lighter;
+    z-index:2;
 
 `
 export const Image = styled.div`
+    z-index:2;
     flex:1;
     overflow:hidden;
     img{
