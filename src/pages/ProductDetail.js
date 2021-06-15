@@ -2,6 +2,8 @@ import React, {useState, useEffect} from "react";
 import styled from "styled-components";
 import {useHistory} from "react-router-dom";
 import {ProductState} from "../components/ProductState"
+import {motion} from "framer-motion";
+import {pageAnimation}from "../pages/animation"
 
 const ProductDetail = () => {
     const history = useHistory()
@@ -18,7 +20,7 @@ const ProductDetail = () => {
     return(
         <>
         {product && (
-        <Details>
+        <Details variants={pageAnimation} initial="hidden" animate="show" exit="exit">
             <Headline>
                <h2>
                    {product.title}
@@ -39,7 +41,7 @@ const ProductDetail = () => {
 
 };
 
-const Details = styled.div`
+const Details = styled(motion.div)`
     color:white;
 `
 const Headline = styled.div`
