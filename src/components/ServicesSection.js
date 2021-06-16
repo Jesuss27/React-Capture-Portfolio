@@ -7,9 +7,16 @@ import workStation from "../images/workStation.jpg"
 import {About, Description, Hide, Image} from "../styles"
 import styled from "styled-components";
 
+import {useInView} from "react-intersection-observer" ;
+import {useAnimation} from "framer-motion" ;
+import {fade} from "../pages/animation"
+import {UseScroll} from "./useScroll"
+
 const ServicesSection = () => {
+    const [element, controls] = UseScroll();
+
     return(
-        <Services>
+        <Services variants={fade} animate={controls} initial="hidden" ref={element}>
             <Description>
                 <h2>Top <span>Quality</span> Service</h2>
                 <Cards>

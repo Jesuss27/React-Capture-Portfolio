@@ -6,11 +6,14 @@ import html from "../images/html.png"
 import sass from "../images/sass.svg"
 import php from "../images/php.png"
 import react from "../images/react.png"
+import {UseScroll} from "./useScroll"
+import {fade} from "../pages/animation"
  
 
 const FaqSection = () => {
+    const [element,controls] = UseScroll();
     return(
-        <Faq>
+        <Faq variants={fade} initial="hidden" animate={controls} ref={element}>
             <h1>SKILLS</h1>
             <div className="proficiencies">
                 <Proficiency>
