@@ -7,9 +7,14 @@ import {Link} from "react-router-dom";
 //Animations
 import {motion} from "framer-motion";
 import { pageAnimation, fade, photoAnim, lineAnim, slider, sliderContainer } from "../pages/animation"
+import {UseScroll} from "../components/useScroll"
+import ScrollTop from "../components/ScrollTop"
 
 
 const Work = () => {
+    const [element,controls] = UseScroll();
+    const [element2,controls2] = UseScroll();
+
     return(
         <Works variants={pageAnimation} initial="hidden" animate="show" exit="exit" style={{background:"#ffff"}}>
 
@@ -21,7 +26,7 @@ const Work = () => {
             </motion.div>
 
 
-            <Example>
+            <Example >
                 <motion.h1 variants={fade}>Goodfika</motion.h1>
                 <motion.div variants={lineAnim} className="line"></motion.div>
                 <Link to="/work/goodfika">
@@ -31,7 +36,7 @@ const Work = () => {
                 </Link>
             </Example>
 
-            <Example>
+            <Example variants={fade} animate={controls} initial="hidden" ref={element}>
                 <motion.h1 variants={fade}>Sad Times</motion.h1>
                 <motion.div variants={lineAnim}  className="line"></motion.div>
                 <Link to="/work/sad-times">
@@ -41,7 +46,7 @@ const Work = () => {
                 </Link>
             </Example>
 
-            <Example>
+            <Example variants={fade} animate={controls2} initial="hidden" ref={element2}>
                 <motion.h1 variants={fade}>Metro</motion.h1>
                 <motion.div variants={lineAnim}  className="line"></motion.div>
                 <Link to="/work/hamlet">
@@ -51,6 +56,9 @@ const Work = () => {
                 </Link>
             </Example>
 
+
+
+        <ScrollTop />
             
         </Works>
 
@@ -65,9 +73,13 @@ const Works = styled(motion.div)`
         padding:1rem 0rem;
         
     }
+    @media (max-width:1300px){
+        padding:2rem;
+        
+    }
 `
 
-const Example = styled.div`
+const Example = styled(motion.div)`
     padding-bottom: 10rem;
     .line{
         height:0.5rem;

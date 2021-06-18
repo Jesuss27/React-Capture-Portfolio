@@ -7,6 +7,7 @@ import {Switch,Route, useLocation} from "react-router-dom";
 import ProductDetail from "./pages/ProductDetail";
 //Animate components when they are removed from "React Tree"
 import {AnimatePresence} from "framer-motion"
+import ScrollTop from "./components/ScrollTop"
 
 
 

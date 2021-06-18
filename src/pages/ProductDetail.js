@@ -4,7 +4,7 @@ import {useHistory} from "react-router-dom";
 import {ProductState} from "../components/ProductState"
 import {motion} from "framer-motion";
 import {pageAnimation}from "../pages/animation"
-
+import ScrollTop from "../components/ScrollTop"
 const ProductDetail = () => {
     const history = useHistory()
     const url = history.location.pathname
@@ -33,6 +33,8 @@ const ProductDetail = () => {
                 ))}
 
             </Awards>
+
+            <ScrollTop />
         </Details>
              )}
         </>
@@ -43,6 +45,7 @@ const ProductDetail = () => {
 
 const Details = styled(motion.div)`
     color:white;
+    
 `
 const Headline = styled.div`
     min-height:90vh;
@@ -68,6 +71,11 @@ const Awards = styled.div`
     margin:5rem 10rem;
     align-items:center;
     justify-content: space-around;
+    @media (max-width:1300px){
+        display:block;
+        margin:2rem;
+    }
+
 `
 
 const AwardStyle = styled.div`
@@ -85,7 +93,7 @@ const AwardStyle = styled.div`
     p{
         padding:2rem 0rem;
     }
-
+    
 `
 
 const Award = (props) => {
